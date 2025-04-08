@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Тест на выбор профессии по навыкам</title>
+    <link rel="stylesheet" href="style/styles-test.css">
+    <link rel="icon" type="image/png" href="png/images.png">
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="index.html">Главная</a></li>
+                <li><a href="catalog.html">Каталог профессий</a></li>
+                <li><a href="test.html">Тесты</a></li>
+            </ul>
+        </nav>
+    </header>
+<main>
+    <section class="test-section">
+        <h1>Тест на выбор профессии по навыкам</h1>
+		<p>Этот тест поможет вам определить, какие виды деятельности вам наиболее подходят. Выберите наиболее подходящие для вас ответы, и в конце вы получите результат с рекомендациями по профессиям.</p>
+        <form id="test-form">
+             <div class="question">
+                <p>1. Какую деятельность вы предпочитаете?</p>
+                <label><input type="radio" name="q1" value="research"> Исследования и анализ</label>
+                <label><input type="radio" name="q1" value="creative"> Творческое самовыражение</label>
+                <label><input type="radio" name="q1" value="practical"> Практическую работу руками</label>
+            </div>
+            
+            <div class="question">
+                <p>2. Как вам удобнее работать?</p>
+                <label><input type="radio" name="q2" value="research"> В команде</label>
+                <label><input type="radio" name="q2" value="creative"> Самостоятельно</label>
+                <label><input type="radio" name="q2" value="practical"> Иногда так, иногда так</label>
+            </div>
+            
+            <div class="question">
+                <p>3. Как вы принимаете решения?</p>
+                <label><input type="radio" name="q3" value="research"> Долго анализируя</label>
+                <label><input type="radio" name="q3" value="creative"> Интуитивно, быстро</label>
+                <label><input type="radio" name="q3" value="practical"> Смешанный подход</label>
+            </div>
+            
+            <div class="question">
+                <p>4. Вам нравится работать с людьми?</p>
+                <label><input type="radio" name="q4" value="creative"> Да, мне нравится общение</label>
+                <label><input type="radio" name="q4" value="research"> Нет, предпочитаю работать в одиночку</label>
+                <label><input type="radio" name="q4" value="practical"> Иногда</label>
+            </div>
+            
+            <div class="question">
+                <p>5. Как вы относитесь к рутинной работе?</p>
+                <label><input type="radio" name="q5" value="research"> Люблю стабильность</label>
+                <label><input type="radio" name="q5" value="practical"> Меня не раздражает</label>
+                <label><input type="radio" name="q5" value="creative"> Терпеть не могу однообразие</label>
+            </div>
+            
+            <div class="question">
+                <p>6. Вам важна физическая активность в работе?</p>
+                <label><input type="radio" name="q6" value="practical"> Да, я люблю движение</label>
+                <label><input type="radio" name="q6" value="research"> Нет, предпочитаю умственную деятельность</label>
+                <label><input type="radio" name="q6" value="creative"> Средний уровень</label>
+            </div>
+
+            <div class="question">
+                <p>7. Какой стиль работы вам ближе?</p>
+                <label><input type="radio" name="q7" value="research"> Четкий план и анализ</label>
+                <label><input type="radio" name="q7" value="creative"> Свободное творчество</label>
+                <label><input type="radio" name="q7" value="practical"> Практическое выполнение задач</label>
+            </div>
+
+            <div class="question">
+                <p>8. Что вас мотивирует?</p>
+                <label><input type="radio" name="q8" value="research"> Новые знания и открытия</label>
+				<label><input type="radio" name="q8" value="creative"> Самовыражение</label>
+                <label><input type="radio" name="q8" value="practical"> Практическая польза от работы</label>
+            </div>
+
+            <div class="question">
+                <p>9. Как вы относитесь к неопределенности?</p>
+                <label><input type="radio" name="q9" value="research"> Люблю четкость и анализ</label>
+                <label><input type="radio" name="q9" value="creative"> Обожаю спонтанность</label>
+                <label><input type="radio" name="q9" value="practical"> Терпимо отношусь</label>
+            </div>
+
+            <div class="question">
+                <p>10. Что вас больше всего привлекает в работе?</p>
+                <label><input type="radio" name="q10" value="research"> Развитие интеллекта</label>
+                <label><input type="radio" name="q10" value="creative"> Возможность креативить</label>
+                <label><input type="radio" name="q10" value="practical"> Практический результат</label>
+            </div>
+            
+            <button type="button" onclick="calculateResult()">Узнать результат</button>
+        </form>
+        <div id="result" class="result">
+            <h2>Ваш результат:</h2>
+            <p id="result-text"></p>
+        </div>
+    </section>
+</main>
+<script>
+    function calculateResult() {
+        let results = {
+            research: 0,
+            creative: 0,
+            practical: 0
+        };
+        
+        document.querySelectorAll('input[type="radio"]:checked').forEach(input => {
+            if (results.hasOwnProperty(input.value)) {
+                results[input.value]++;
+            }
+        });
+        
+        let maxCategory = Object.keys(results).reduce((a, b) => results[a] > results[b] ? a : b);
+        
+        let descriptions = {
+            research: "Интеллектуально-исследовательская работа: профессии, связанные с анализом, исследованиями и умственной деятельностью.",
+            creative: "Эстетические виды деятельности: профессии в области искусства, дизайна, творчества.",
+            practical: "Практическая деятельность: профессии, требующие работы руками, техники, строительства."
+        };
+        
+        document.getElementById('result-text').innerText = descriptions[maxCategory];
+		document.getElementById('result').style.display = 'block';
+    }
+</script>
+</body>
+</html>

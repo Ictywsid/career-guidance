@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Каталог профессий</title>
+    <link rel="stylesheet" href="style/styles-catalog.css">
+	<link rel="icon" type="image/png" href="png/images.png">
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="index.html">Главная</a></li>
+                <li><a href="catalog.html">Каталог профессий</a></li>
+                <li><a href="test.html">Тест</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="catalog">
+        <h1>Каталог профессий</h1>
+        <p>Изучи востребованные профессии и выбери ту, которая подходит именно тебе!</p>
+
+        <div class="profession-categories">
+            <button class="category-button" onclick="filterCategory('all')">Все</button>
+            <button class="category-button" onclick="filterCategory('it')">IT и технологии</button>
+            <button class="category-button" onclick="filterCategory('medicine')">Медицина</button>
+            <button class="category-button" onclick="filterCategory('design')">Дизайн</button>
+            <button class="category-button" onclick="filterCategory('engineering')">Инженерия</button>
+            <button class="category-button" onclick="filterCategory('education')">Образование</button>
+        </div>
+
+        <div class="profession-list">
+            
+            <div class="profession-card it">
+                <h3>Программист</h3>
+                <p>Разрабатывает программное обеспечение, создает сайты, мобильные и компьютерные приложения.</p>
+                <a href="programmer.html" class="button">Подробнее</a>
+            </div>
+
+            <div class="profession-card medicine">
+                <h3>Врач</h3>
+                <p>Диагностирует и лечит заболевания, проводит медицинские операции.</p>
+                <a href="doctor.html" class="button">Подробнее</a>
+            </div>
+
+            <div class="profession-card design">
+                <h3>UI/UX дизайнер</h3>
+                <p>Проектирует удобный и привлекательный интерфейс для сайтов и приложений.</p>
+                <a href="ui-ux.html" class="button">Подробнее</a>
+            </div>
+
+   
+            <div class="profession-card engineering">
+                <h3>Инженер</h3>
+                <p>Проектирует механизмы, здания и технические конструкции.</p>
+                <a href="engineer.html" class="button">Подробнее</a>
+            </div>
+
+            <div class="profession-card education">
+                <h3>Учитель</h3>
+                <p>Обучает детей и подростков, передает знания по различным дисциплинам.</p>
+                <a href="teacher.html" class="button">Подробнее</a>
+            </div>
+
+    
+    </main>
+
+    
+</body>
+</html>
