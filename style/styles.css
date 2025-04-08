@@ -9,7 +9,8 @@
 body {
     background: #5f81a5;
     color: white;
-	padding-top: 80 px;
+	padding-top: 80px;
+    overflow-x: hidden;
 }
 
 /* ====== Шапка ====== */
@@ -70,8 +71,8 @@ nav ul li a:hover {
 }
 
 .hero p {
-    font-size: 26px;
-    margin-top: 10px;
+    font-size: 22 px;
+    margin-top: 10 px;
     opacity: 0.9;
 }
 
