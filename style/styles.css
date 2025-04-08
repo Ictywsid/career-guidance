@@ -1,0 +1,240 @@
+/* Основные стили */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background: #5f81a5;
+    color: white;
+	padding-top: 80px;
+}
+
+/* ====== Шапка ====== */
+header {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    padding: 15px 0;
+    background: rgba(0, 0, 0, 0.8);
+    z-index: 1000;
+    animation: fadeIn 1s ease-out;
+}
+
+nav {
+    display: flex;
+    justify-content: center;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 20px;
+    transition: color 0.3s;
+}
+
+nav ul li a:hover {
+    color: #f39c12;
+}
+
+/* ====== Главный экран (Hero) ====== */
+.hero {
+    height: 100vh;
+    background: url('background.jpg') center/cover no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    position: relative;
+}
+
+.hero-content {
+    max-width: 700px;
+    animation: fadeIn 1.5s ease-in-out;
+}
+
+.hero h1 {
+    font-size: 45px;
+    font-weight: bold;
+    text-shadow: 2px 2px 10px rgba(255, 255, 255, 0.3);
+}
+
+.hero p {
+    font-size: 26px;
+    margin-top: 10px;
+    opacity: 0.9;
+}
+
+.button {
+    display: inline-block;
+    margin-top: 21px;
+    padding: 15px 66px;
+    background: #0f2c47;
+    color: white;
+    text-decoration: none;
+    font-size: 22px;
+    border-radius: 5px;
+    transition: background 0.3s, transform 0.2s;
+}
+
+.button:hover {
+    background: #0a1d2e;
+    transform: scale(1.1);
+}
+
+/* ====== Блок "О сайте" ====== */
+.about {
+    padding: 80px 10%;
+    text-align: center;
+}
+
+.about h2 {
+    font-size: 45px;
+    margin-bottom: 20px;
+    position: relative;
+    display: inline-block;
+}
+
+.about-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    margin-top: 30px;
+}
+
+.about-content img {
+    width: 40%;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
+}
+
+.about-text {
+    width: 50%;
+    text-align: left;
+}
+
+.about-text ul {
+    margin-top: 25px;
+    padding-left: 20px;
+}
+
+.about-text li {
+    margin: 20px 0;
+}
+
+/* ====== Карточки трендов ====== */
+.trends {
+    padding: 80px 10%;
+    text-align: center;
+}
+
+.trends h2 {
+    font-size: 40px;
+    margin-bottom: 20px;
+}
+
+.trend-list {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.trend-item {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.2);
+    text-align: center;
+    width: 30%;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.trend-item:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 30px rgba(255, 255, 255, 0.3);
+}
+
+.trend-item img {
+    width: 80px;
+    height: 80px;
+}
+
+.trend-item h3 {
+    margin-top: 15px;
+}
+
+/* ====== Призыв к действию ====== */
+.cta {
+    text-align: center;
+    padding: 50px 10%;
+    background: #5f81a5;
+    color: white;
+}
+
+.cta h2 {
+    font-size: 36px;
+}
+
+.cta p {
+    font-size: 23px;
+    margin-top: 10px;
+}
+
+/* ====== Анимации ====== */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Анимация появления блоков при скролле */
+.hidden {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* ====== Медиа-запросы для мобильных устройств ====== */
+@media (max-width: 768px) {
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .about-content {
+        flex-direction: column;
+    }
+
+    .about-content img, .about-text {
+        width: 100%;
+    }
+
+    .trend-list {
+        flex-direction: column;
+    }
+
+    .trend-item {
+        width: 100%;
+    }
+}
